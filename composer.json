@@ -1,0 +1,17 @@
+{
+    "name": "maixunnhn/thuctap",
+    "autoload": {
+        "psr-4": {
+            "Maixunnhn\\Thuctap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mai-Xuan-Nhan",
+            "email": "maixuannhan2004@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "3.0"
+    }
+}

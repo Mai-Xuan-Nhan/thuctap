@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trang Web</title>
+  <link rel="stylesheet" href="/modular_project/public/css/style.css">
+</head>
+<body>
+<h1>Website hiển thị module</h1>
+
+{% for module in modules %}
+  {% include 'modules/' ~ module.id ~ '.twig' ignore missing %}
+{% else %}
+  <p>Không có module nào được bật</p>
+{% endfor %}
+
+</body>
+</html>

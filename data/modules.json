@@ -1,0 +1,20 @@
+[
+    {
+        "id": "module1",
+        "name": "Sản phẩm nổi bật",
+        "enabled": true,
+        "order": 1
+    },
+    {
+        "id": "module2",
+        "name": "Tin tức mới",
+        "enabled": true,
+        "order": 2
+    },
+    {
+        "id": "module3",
+        "name": "Khuyến mãi",
+        "enabled": true,
+        "order": 3
+    }
+]

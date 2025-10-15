@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Mặc định vào web
+RewriteRule ^$ web/index.php [L]
+
+# Admin panel
+RewriteRule ^admin/?$ admin/index.php [L]
+
+# API
+RewriteRule ^api/?$ api/module_api.php [L]

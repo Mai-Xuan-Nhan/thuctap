@@ -1,0 +1,40 @@
+<div class="module module-1">
+  <h2>Sản phẩm nổi bật</h2>
+
+  <button onclick="toggleContent()">👁️ Hiện / Ẩn nội dung</button>
+
+  <div id="content" style="display:none; margin-top:10px;">
+    <p>Đây là nội dung của module 1 — nơi bạn có thể giới thiệu sản phẩm nổi bật.</p>
+  </div>
+
+  <p><strong>Lượt xem:</strong> {{ views }}</p>
+
+  <hr>
+  <h3>Bình luận</h3>
+
+  <form method="post">
+    <input type="hidden" name="module_id" value="module1">
+    <p><input type="text" name="author" placeholder="Tên của bạn" required></p>
+    <p><textarea name="text" rows="3" placeholder="Viết bình luận..." required></textarea></p>
+    <button type="submit">💬 Gửi bình luận</button>
+  </form>
+
+  {% if comments|length > 0 %}
+    <ul>
+      {% for c in comments %}
+        <li>
+          <b>{{ c.author }}</b> ({{ c.time }}): {{ c.text }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Chưa có bình luận nào.</p>
+  {% endif %}
+</div>
+
+<script>
+  function toggleContent() {
+    const content = document.getElementById('content');
+    content.style.display = (content.style.display === 'none') ? 'block' : 'none';
+  }
+</script>

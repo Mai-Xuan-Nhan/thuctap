@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quản lý module</title>
+  <style>
+    table { border-collapse: collapse; width: 60%; margin: 20px auto; }
+    th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+    th { background: #eee; }
+    input[type="number"] { width: 50px; }
+    .center { text-align: center; }
+  </style>
+</head>
+<body>
+<h1 class="center">Trang quản lý module</h1>
+
+<form method="post" action="index.php?action=update">
+  <table>
+    <tr>
+      <th>Tên module</th>
+      <th>Bật</th>
+      <th>Thứ tự</th>
+    </tr>
+    {% for module in modules %}
+      <tr>
+        <td>{{ module.name }}</td>
+        <td class="center">
+          <input type="checkbox" name="enabled[{{ module.id }}]" {% if module.enabled %}checked{% endif %}>
+        </td>
+        <td class="center">
+          <input type="number" name="order[{{ module.id }}]" value="{{ module.order }}">
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <div class="center">
+    <button type="submit">💾 Lưu thay đổi</button>
+  </div>
+</form>
+</body>
+</html>
