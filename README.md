@@ -22,3 +22,10 @@ Mở **Terminal** trong thư mục dự án (trong PHPStorm hoặc VS Code):
 
 ```bash
 composer init
+### Bước 2: Cài đặt Twig
+
+Sau khi composer.json được tạo xong, chạy lệnh:
+
+composer require "twig/twig:^3.0"
+
+---
