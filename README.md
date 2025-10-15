@@ -22,10 +22,43 @@ Mở **Terminal** trong thư mục dự án (trong PHPStorm hoặc VS Code):
 
 ```bash
 composer init
+```
 ### Bước 2: Cài đặt Twig
 
 Sau khi composer.json được tạo xong, chạy lệnh:
 
 composer require "twig/twig:^3.0"
 
+---
+
+## 🧰 3. Cấu hình
+
+### Bước 1: Cấu hình VirtualHost trong httpd-vhosts.conf (thường nằm trong xampp\apcache\conf\extra\httpd-vhosts.conf)
+
+Mở Notepad++ và mở file như đường link trên:
+
+```bash
+<VirtualHost *:80>
+    ServerAdmin admin@thuctap.local
+    DocumentRoot "D:/thuctap"
+    ServerName thuctap.local
+    ServerAlias www.thuctap.local
+
+    <Directory "D:/thuctap">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+Chỉnh sửa lại đường dẫn cho đúng với nơi đặt file
+
+### Bước 2:  Cấu hình file hosts ( địa chỉ file là C:\Windows\System32\drivers\etc\hosts)
+
+Mở Notepad++ và mở file như đường link trên:
+
+```bash
+127.0.0.1 thuctap.local
+```
 ---
