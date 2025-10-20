@@ -1,29 +1,43 @@
 <div class="module module-1">
-  <h2>Sản phẩm nổi bật</h2>
+  <h2>🌟 Sản phẩm nổi bật</h2>
 
   <button onclick="toggleContent()">👁️ Hiện / Ẩn nội dung</button>
 
-  <div id="content" style="display:none; margin-top:10px;">
+  <div id="content" style="display:none;">
     <p>Đây là nội dung của module 1 — nơi bạn có thể giới thiệu sản phẩm nổi bật.</p>
   </div>
 
   <p><strong>Lượt xem:</strong> {{ views }}</p>
 
   <hr>
-  <h3>Bình luận</h3>
+  <h3>💬 Bình luận</h3>
 
-  <form method="post">
+  <form method="post" action="" id="comment-form">
     <input type="hidden" name="module_id" value="module1">
-    <p><input type="text" name="author" placeholder="Tên của bạn" required></p>
-    <p><textarea name="text" rows="3" placeholder="Viết bình luận..." required></textarea></p>
-    <button type="submit">💬 Gửi bình luận</button>
+
+    <label for="author">Tên</label>
+    <input id="author" type="text" name="author" required>
+
+    <label for="text">Nội dung</label>
+    <textarea id="text" name="text" required></textarea>
+
+    {% if captcha.provider == 'google' %}
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <div class="g-recaptcha" data-sitekey="{{ captcha.google_site_key }}"></div>
+      {% elseif captcha.provider == 'turnstile' %}
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+      <div class="cf-turnstile" data-sitekey="{{ captcha.turnstile_site_key }}"></div>
+    {% endif %}
+
+    <button type="submit">💌 Gửi bình luận</button>
   </form>
 
   {% if comments|length > 0 %}
     <ul>
       {% for c in comments %}
         <li>
-          <b>{{ c.author }}</b> ({{ c.time }}): {{ c.text }}
+          <b>{{ c.author }}</b> <small>({{ c.time }})</small><br>
+          {{ c.text }}
         </li>
       {% endfor %}
     </ul>

@@ -18,13 +18,13 @@ class CommentModel {
     file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
   }
 
-  // 💬 Lấy comment theo module ID
+  // Lấy comment theo module ID
   public function getComments($moduleId) {
     $data = $this->readJson($this->commentPath);
     return isset($data[$moduleId]) ? $data[$moduleId] : [];
   }
 
-  // 💬 Lưu comment mới
+  // Lưu comment mới
   public function addComment($moduleId, $author, $text) {
     $data = $this->readJson($this->commentPath);
     $data[$moduleId][] = [
@@ -35,7 +35,7 @@ class CommentModel {
     $this->writeJson($this->commentPath, $data);
   }
 
-  // 👁️‍🗨️ Tăng lượt xem
+  // Tăng lượt xem
   public function incrementView($moduleId) {
     $views = $this->readJson($this->viewPath);
     if (!isset($views[$moduleId])) $views[$moduleId] = 0;
@@ -43,7 +43,7 @@ class CommentModel {
     $this->writeJson($this->viewPath, $views);
   }
 
-  // 👁️‍🗨️ Lấy số view
+  // Lấy số view
   public function getViews($moduleId) {
     $views = $this->readJson($this->viewPath);
     return isset($views[$moduleId]) ? $views[$moduleId] : 0;

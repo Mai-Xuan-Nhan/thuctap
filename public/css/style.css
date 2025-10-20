@@ -1,0 +1,106 @@
+.module {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.module h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.module button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.module button:hover {
+  background: #0056b3;
+}
+
+#content {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+}
+
+form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.g-recaptcha, .cf-turnstile {
+  margin-top: 10px;
+  align-self: center;
+}
+
+form button[type="submit"] {
+  align-self: flex-end;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button[type="submit"]:hover {
+  background: #1e7e34;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  background: #f1f3f5;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+li b {
+  color: #007bff;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 15px 0;
+}
