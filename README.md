@@ -26,9 +26,9 @@ composer init
 ### Bước 2: Cài đặt Twig
 
 Sau khi composer.json được tạo xong, chạy lệnh:
-
+```bash
 composer require "twig/twig:^3.0"
-
+```
 ---
 
 ## 🧰 3. Cấu hình
